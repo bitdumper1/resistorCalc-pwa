@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PWA Test</title>
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/skeleton.min.css">
+	<style>
+
+		.container {
+			text-align: center;
+			padding-top: 1em;
+		}
+
+		.header h1 {
+			color: darkred;	
+		}
+
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Resistor Calculator</h1>
+			The value of your resistor is
+			<h2 id="value">0 Ohm</h2>
+		</div>
+		<div class="row">
+			<label for="strip" class="six columns">No. of stripes </label>
+			<select id="strip" class="six columns" onchange="stripes(this.value)">
+				<option value="four">4</option>
+				<option value="five">5</option>
+				<option value="six">6</option>
+			</select>
+		</div>
+		<form>
+			<div class="row">
+				<div class="six columns">
+					<label for="one">1st color</label>
+					<select id="one" class="u-full-width" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+					</select>
+				</div>
+				<div class="six columns">
+					<label for="two">2nd color</label>
+					<select id="two" class="u-full-width" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="six columns">
+					<label for="three">3rd color</label>
+					<select id="three" class="u-full-width" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+					</select>
+				</div>
+				<div class="six columns">
+					<label for="four">4th color</label>
+					<select id="four" class="u-full-width" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="six columns">
+					<label for="five">5th color</label>
+					<select id="five" class="u-full-width" disabled="true" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+					</select>
+				</div>
+				<div class="six columns">
+					<label for="six">6th color</label>
+					<select id="six" class="u-full-width" disabled="true" onchange="calculate()">
+						<option value="brown">Brown</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="violet">Violet</option>
+						<option value="grey">Grey</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+					</select>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">/*
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function(){
+			navigator.serviceWorker.register('/sw.js')
+			.then(r => {
+				console.log('registration successful. scope:', r.scope);
+			})
+			.catch(e => {
+				console.log('failed ', e)
+			});
+		});
+	}*/
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
