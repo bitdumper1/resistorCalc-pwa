@@ -32,20 +32,61 @@ function rm(from, obj) {
 	}
 }
 
+//create and add option to select object
+function add(to, val, html) {
+	var o = document.createElement('option');
+	o.value = val;
+	o.innerHTML = html;
+	to.appendChild(o);
+}
+
 //enable or disable options based on number of stirp.
-function stripes(value) {
+function strips(value) {
 	switch (value) {
 		case "four":
+			//disable unnecessary strip
 			$("five").disabled = true;
 			$("six").disabled = true;
+			//remove unnecessary options
+			rm($('four'), 'gold');
+			rm($('four'), 'silver');
+			rm($('four'), 'white');
+			rm($('four'), 'black');
+			//add necessary options
+			add($('three'), 'gold', 'Gold');
+			add($('three'), 'silver', 'Silver');
+			add($('four'), 'gold', 'Gold');
+			add($('four'), 'silver', 'Silver');
 			break;
 		case "five":
+			//disable/enable unnecessary strip
 			$("five").disabled = false;
 			$("six").disabled = true;
+			//remove options
+			rm($('three'), 'gold');
+			rm($('three'), 'silver');
+			rm($('five'), 'white');
+			rm($('five'), 'black');
+			//add options
+			add($('four'), 'gold', 'Gold');
+			add($('four'), 'silver', 'Silver');
+			add($('five'), 'gold', 'Gold');
+			add($('five'), 'silver', 'Silver');
 			break
 		default:
 			$("five").disabled = false;
 			$("six").disabled = false;
+			//remove options
+			rm($('three'), 'gold');
+			rm($('three'), 'silver');
+			rm($('five'), 'white');
+			rm($('five'), 'black');
+			//add options
+			add($('four'), 'gold', 'Gold');
+			add($('four'), 'silver', 'Silver');
+			add($('five'), 'gold', 'Gold');
+			add($('five'), 'silver', 'Silver');
+			break
 	}
 }
 
