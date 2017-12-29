@@ -30,7 +30,7 @@
 			<h2 id="value">0 Ohm</h2>
 		</div>
 		<div class="row">
-			<label for="strip" class="six columns">No. of stripes </label>
+			<label for="strip" class="six columns">No. of strips </label>
 			<select id="strip" class="six columns" onchange="strips(this.value)">
 				<option value="four">4</option>
 				<option value="five">5</option>
@@ -73,31 +73,11 @@
 				<div class="six columns">
 					<label for="three">3rd color</label>
 					<select id="three" class="u-full-width" onchange="calculate()">
-						<option value="black">Black</option>
-						<option value="brown">Brown</option>
-						<option value="red">Red</option>
-						<option value="orange">Orange</option>
-						<option value="yellow">Yellow</option>
-						<option value="green">Green</option>
-						<option value="blue">Blue</option>
-						<option value="violet">Violet</option>
-						<option value="grey">Grey</option>
-						<option value="white">White</option>
 					</select>
 				</div>
 				<div class="six columns">
 					<label for="four">4th color</label>
 					<select id="four" class="u-full-width" onchange="calculate()">
-						<option value="black">Black</option>
-						<option value="brown">Brown</option>
-						<option value="red">Red</option>
-						<option value="orange">Orange</option>
-						<option value="yellow">Yellow</option>
-						<option value="green">Green</option>
-						<option value="blue">Blue</option>
-						<option value="violet">Violet</option>
-						<option value="grey">Grey</option>
-						<option value="white">White</option>
 					</select>
 				</div>
 			</div>
@@ -105,38 +85,54 @@
 				<div class="six columns">
 					<label for="five">5th color</label>
 					<select id="five" class="u-full-width" disabled="true" onchange="calculate()">
-						<option value="black">Black</option>
-						<option value="brown">Brown</option>
-						<option value="red">Red</option>
-						<option value="orange">Orange</option>
-						<option value="yellow">Yellow</option>
-						<option value="green">Green</option>
-						<option value="blue">Blue</option>
-						<option value="violet">Violet</option>
-						<option value="grey">Grey</option>
-						<option value="white">White</option>
 					</select>
 				</div>
 				<div class="six columns">
 					<label for="six">6th color</label>
 					<select id="six" class="u-full-width" disabled="true" onchange="calculate()">
-						<option value="black">Black</option>
 						<option value="brown">Brown</option>
 						<option value="red">Red</option>
 						<option value="orange">Orange</option>
 						<option value="yellow">Yellow</option>
-						<option value="green">Green</option>
 						<option value="blue">Blue</option>
 						<option value="violet">Violet</option>
-						<option value="grey">Grey</option>
-						<option value="white">White</option>
 					</select>
 				</div>
 			</div>
 		</form>
 	</div>
+	<div id="multiplier" hidden="true">
+		<option value="black">Black</option>
+		<option value="brown">Brown</option>
+		<option value="red">Red</option>
+		<option value="orange">Orange</option>
+		<option value="yellow">Yellow</option>
+		<option value="green">Green</option>
+		<option value="blue">Blue</option>
+		<option value="violet">Violet</option>
+		<option value="grey">Grey</option>
+		<option value="white">White</option>
+		<option value="gold">Gold</option>
+		<option value="silver">Silver</option>
+	</div>
+	<div id="tolerance" hidden="true">
+		<option value="brown">Brown</option>
+		<option value="red">Red</option>
+		<option value="orange">Orange</option>
+		<option value="yellow">Yellow</option>
+		<option value="green">Green</option>
+		<option value="blue">Blue</option>
+		<option value="violet">Violet</option>
+		<option value="grey">Grey</option>
+		<option value="white">White</option>
+		<option value="gold">Gold</option>
+		<option value="silver">Silver</option>
+	</div>
 </body>
-<script type="text/javascript">/*
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+	strips("four");
+	/*
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', function(){
 			navigator.serviceWorker.register('/sw.js')
@@ -147,7 +143,7 @@
 				console.log('failed ', e)
 			});
 		});
-	}*/
+	}
+	*/
 </script>
-<script type="text/javascript" src="js/main.js"></script>
 </html>

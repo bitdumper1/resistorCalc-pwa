@@ -6,7 +6,5 @@ It is currently in development. But you can find a working example [here](https:
 To Do
 -----
 * Improve the calculation algo to include tolerance
-* Adapt the options relative to no. of strip.
-* Add missing multipliers.
 * Complete service worker implementation.
 * Make manifest and prompt user to add on homescreen.
