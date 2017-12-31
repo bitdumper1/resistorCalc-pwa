@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/skeleton.min.css">
 	<style>
+		body {
+			background-color: #eee;
+		}
+
 		.container {
 			text-align: center;
 			padding-top: 1em;
@@ -20,12 +24,20 @@
 			background-color: lightgray;
 			border-radius: 10px;
 		}
+
+		h2 {
+			margin-bottom: 0px;
+		}
+
+		h4 {
+			margin-top: 0px;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Resistor Calculator testing</h1>
+			<h1>Resistor Calculator</h1>
 			The value of your resistor is
 			<h2 id="value">0 Ohm</h2>
 			<h4 id="tempco" hidden="true"></h4>
@@ -133,10 +145,9 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript">
 	strips("four");
-	/*
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', function(){
-			navigator.serviceWorker.register('/sw.js')
+			navigator.serviceWorker.register('./sw.js')
 			.then(r => {
 				console.log('registration successful. scope:', r.scope);
 			})
@@ -145,6 +156,5 @@
 			});
 		});
 	}
-	*/
 </script>
 </html>
