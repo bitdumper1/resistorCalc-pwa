@@ -1,35 +1,45 @@
-var OFF = 'offline-cache';
+var CACHE = 'offline-cache';
 var URLS = [
-	'/',
-	'/index.html',
-	'/css/skeleton.min.css',
-	'/css/normalize.min.css',
-	'/js/main.js'
+	'./index.html',
+	'./css/skeleton.min.css',
+	'./css/normalize.min.css',
+	'./js/main.js'
 ];
 
 self.addEventListener('install', event => {
 	event.waitUntil(
-		caches.open(OFF)
+		caches.open(CACHE)
 		.then(function (cache) {
-			console.log('opened cache');
 			return cache.addAll(URLS);
+		}).then(function () {
+			return self.skipWaiting();
 		})
 	);
-	console.log('installed');
+	
 });
 
 self.addEventListener('activated', event => {
-	console.log('activated');
 });
 
 self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request)
-		.then(function(response) {
-			if(response) {
-				return response;
-			}
-			return fetch(event.request);
-		})
-	);
+	event.respondWith(fromCache(event.request));
+	event.waitUntil(
+    	update(event.request)
+    );
 });
+
+function fromCache(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request);
+  });
+}
+
+function update(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return fetch(request).then(function (response) {
+      return cache.put(request, response.clone()).then(function () {
+        return response;
+      });
+    });
+  });
+}

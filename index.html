@@ -7,27 +7,28 @@
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/skeleton.min.css">
 	<style>
-
 		.container {
 			text-align: center;
 			padding-top: 1em;
 		}
 
 		.header h1 {
-			color: darkred;	
+			color: darkred;
 		}
 
-		.hidden {
-			display: none;
+		.header h2, h4 {
+			background-color: lightgray;
+			border-radius: 10px;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Resistor Calculator</h1>
+			<h1>Resistor Calculator testing</h1>
 			The value of your resistor is
 			<h2 id="value">0 Ohm</h2>
+			<h4 id="tempco" hidden="true"></h4>
 		</div>
 		<div class="row">
 			<label for="strip" class="six columns">No. of strips </label>
